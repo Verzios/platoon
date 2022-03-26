@@ -8,9 +8,9 @@ export default function Hero() {
 					background:
 						'linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)),url(assets/hero-bg.jpg) 0 0 no-repeat',
 				}}
-				className="h-screen"
+				className="h-screen mb-32"
 			>
-				<div className="absolute bottom-0 h-72 bg-black w-full blurBackground z-0 ">
+				<div className="absolute bottom-0 h-96 bg-black w-full blurBackground z-0  ">
 					<div className="w-4/5  mx-auto mt-5 border-b-2 h-48 border-gray-600">
 						<div className="grid grid-cols-2">
 							<div>
@@ -26,15 +26,18 @@ export default function Hero() {
 									justifyContent: 'flex-end',
 								}}
 							>
-								<button className="circle bg-transparent text-center relative right-1/3 h-full">
+								<a
+									className="circle bg-transparent text-center relative right-1/3 h-full"
+									href="#carousel"
+								>
 									<span className="circle_btn text-white  pr-32 relative text-xl font-bold flex ">
 										Explore
 									</span>
-								</button>
+								</a>
 							</div>
 						</div>
 					</div>
-					<div className="mt-4 grid grid-cols-2 w-3/5 mx-auto">
+					<div className="mt-4 grid grid-cols-2 w-3/5 mx-auto ">
 						<div className="text-center text-white">
 							<h2
 								style={{

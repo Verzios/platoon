@@ -1,0 +1,12 @@
+[data-aos='widthTransition'] {
+	width: 150px;
+}
+[data-aos='widthTransition'].aos-animate {
+	width: 415px;
+}
+[data-aos='rotateCircle'] {
+	transform: rotate(-180deg);
+}
+[data-aos='rotateCircle'].aos-animate {
+	transform: rotate(0deg);
+}

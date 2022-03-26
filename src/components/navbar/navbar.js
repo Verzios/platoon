@@ -5,7 +5,11 @@ import Modal from './modal';
 export default function Navbar() {
 	const [hover, setHover] = useState(false);
 	const [click, setClick] = useState(false);
-
+	const scrollToDiv = (id) => {
+		const divElement = document.getElementById(id);
+		console.log(divElement);
+		divElement.scrollIntoView({ behavior: 'smooth' });
+	};
 	return (
 		<>
 			<div className="grid grid-cols-3 w-full fixed pt-[40px] z-10">
@@ -130,21 +134,21 @@ export default function Navbar() {
 				<div className="top-[200px] absolute text-center w-full grid grid-row-6 gap-16 z-10">
 					<div>
 						<a
-							href="/"
 							className="text-white text-3xl font-bold hover:text-purple-600 ease-in-out duration-500"
 							style={{ fontFamily: 'Inconsolata' }}
+							href="#carousel"
+							onClick={() => setClick(!click)}
 						>
 							PLATOON
 						</a>
 					</div>
 					<div>
-						<a
-							href="/"
-							className="text-white text-3xl font-bold hover:text-purple-600 ease-in-out duration-500"
+						<h2
+							className="text-white text-3xl font-bold hover:text-purple-600 ease-in-out duration-500 cursor-pointer"
 							style={{ fontFamily: 'Inconsolata' }}
 						>
 							ABOUT
-						</a>
+						</h2>
 					</div>
 					<div>
 						<a

@@ -1,0 +1,32 @@
+.button_circle {
+	border-radius: 40px;
+}
+.textReveal {
+	opacity: 0;
+	transform: translateX(-300px);
+	transition: all 0.7s ease;
+}
+.textReveal.active {
+	transform: translateY(0);
+	opacity: 1;
+}
+.divReveal {
+	opacity: 0;
+	transform: translateX(300px);
+	transition: all 0.7s ease;
+}
+.divReveal.active {
+	transform: translateX(0);
+	opacity: 1;
+}
+.test::after {
+	content: '';
+	position: absolute;
+	top: 1000px;
+	right: 0px;
+	width: 666px;
+	height: 1066px;
+	opacity: 0.4;
+	background-size: contain;
+	background: url('https://bapes.io/assets/img/unique-bionic-apes-bg.svg');
+}

@@ -1,0 +1,29 @@
+.bgAfter::after {
+	content: '5555';
+	position: absolute;
+	right: 250px;
+	height: 500px;
+	width: 500px;
+	line-height: 500px;
+	font-size: 500px;
+	color: rgba(255, 255, 255, 0.07);
+	margin-top: 62px;
+}
+[data-aos='rotateElement'] {
+	transform: rotate(45deg);
+	opacity: 0;
+	transition-property: transform, opacity;
+}
+[data-aos='rotateElement'].aos-animate {
+	transform: rotate(0deg);
+	opacity: 1;
+}
+[data-aos='rotateOppositeElement'] {
+	transform: rotate(-45deg);
+
+	transition-property: transform, opacity;
+}
+[data-aos='rotateOppositeElement'].aos-animate {
+	transform: rotate(0deg);
+	opacity: 1;
+}
