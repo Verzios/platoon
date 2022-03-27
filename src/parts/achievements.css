@@ -1,0 +1,21 @@
+.displayTick::after {
+	content: '';
+	background: url(https://bapes.io/assets/img/achieved-icon.svg) center center
+		no-repeat;
+	width: 43px;
+	height: 39px;
+	margin-left: 22px;
+	display: inline-block;
+}
+.line::after {
+	content: '';
+	position: relative;
+	display: inline-block;
+	left: 0;
+	right: 0;
+	top: calc(100% + 20px);
+	margin: 0 auto;
+	width: 1px;
+	height: 100px;
+	background: #303030;
+}

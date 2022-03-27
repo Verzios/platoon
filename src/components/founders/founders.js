@@ -6,7 +6,7 @@ import FounderCard from '../../parts/founderCard';
 
 import Slider from 'react-slick';
 export default function Founders() {
-	const [activeIndex, setActiveIndex] = useState(1);
+	const [activeIndex, setActiveIndex] = useState(0);
 	const [threeActives, setThreeActives] = useState([0, 1, 2]);
 	const [translatePosition, setTranslatePosition] = useState(0);
 	const founders = [
@@ -36,13 +36,46 @@ export default function Founders() {
 		},
 		{
 			index: 3,
-			image: '../assets/bionic-apes-18.png',
+			image: '../assets/sami-m.png',
 			title: 'Head of Communications & Integration',
 			name: 'George T.',
 			description:
 				"Social media entrepreneur & investor who left his life'behind to dive into the world of crypto.",
 		},
 	];
+	const NextArrow = ({ onClick }) => {
+		return (
+			<button
+				className="w-24 h-24 mx-auto absolute right-0 top-52"
+				style={{
+					background:
+						'url(../assets/icons8-left-arrow-64.png) center center no-repeat',
+					border: '1px solid #787878',
+					borderRadius: '50%',
+					transform: 'rotate(180deg)',
+					right: '-20%',
+					top: '50%',
+				}}
+				onClick={onClick}
+			></button>
+		);
+	};
+	const PrevArrow = ({ onClick }) => {
+		return (
+			<button
+				className="w-24 h-24 mx-auto absolute left-0 top-52"
+				style={{
+					background:
+						'url(../assets/icons8-left-arrow-64.png) center center no-repeat',
+					border: '1px solid #787878',
+					borderRadius: '50%',
+					left: '-20%',
+					top: '50%',
+				}}
+				onClick={onClick}
+			></button>
+		);
+	};
 	const settings = {
 		infinite: true,
 		lazyLoad: true,
@@ -50,6 +83,9 @@ export default function Founders() {
 		centerMode: true,
 		centerPadding: 0,
 		slidesToShow: 3,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		beforeChange: (current, next) => setActiveIndex(next),
 	};
 	useEffect(() => {
 		AOS.init({
@@ -80,7 +116,7 @@ export default function Founders() {
 		}
 	};
 	return (
-		<div className="mt-16 testDiv">
+		<div className="mt-16 testDiv h-screen">
 			<div data-aos="fade-up" className=" containerDiv ">
 				<h2
 					className="text-center text-white z-10 mb-16"
@@ -110,18 +146,38 @@ export default function Founders() {
 				>
 					<Slider
 						{...settings}
-						style={{ width: '100%', height: 300, marginTop: 128 }}
+						style={{
+							width: '100%',
+							height: 300,
+							marginTop: 128,
+						}}
 						className="mx-auto"
 					>
-						{founders.map((founder) => {
+						{founders.map((founder, idx) => {
 							return (
-								<div>
-									<FounderCard
-										name={founder.name}
-										title={founder.title}
-										image={founder.image}
-										description={founder.description}
-									/>
+								<div
+									className={
+										idx === activeIndex
+											? 'slide activeSlide'
+											: 'slide'
+									}
+								>
+									{idx === activeIndex ? (
+										<FounderCard
+											name={founder.name}
+											title={founder.title}
+											image={founder.image}
+											description={founder.description}
+											active={true}
+										/>
+									) : (
+										<FounderCard
+											name={founder.name}
+											title={founder.title}
+											image={founder.image}
+											description={founder.description}
+										/>
+									)}
 								</div>
 							);
 						})}
