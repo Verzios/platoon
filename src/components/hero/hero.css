@@ -17,19 +17,30 @@
 	height: 14px;
 	margin-right: 20px;
 }
-.blockChain {
-	font-size: 24px;
-	letter-spacing: 4px;
-	font-weight: bold;
-	font-family: 'Ubuntu';
-}
+
 .brandName {
-	font-size: 7vh;
+	font-size: 64px;
 	color: white;
 	font-family: 'Ubuntu';
 	letter-spacing: 3px;
 	font-weight: 600;
 }
+.blockChain {
+	font-size: 24px;
+}
+@media only screen and (max-width: 600px) {
+	.blockChain::before {
+		width: 200px;
+		margin-right: 200px;
+	}
+	.blockChain {
+		font-size: 18px;
+	}
+	.brandName {
+		font-size: 48px;
+	}
+}
+
 .circle {
 	border-color: gray;
 	transform: rotate(90deg);

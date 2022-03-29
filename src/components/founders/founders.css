@@ -19,3 +19,17 @@
 	height: 100%;
 	z-index: 0;
 }
+.prevButton {
+	left: -10%;
+}
+.nextArrow {
+	right: -10%;
+}
+@media only screen and (max-width: 800px) {
+	.prevButton {
+		left: -20%;
+	}
+	.nextArrow {
+		right: -20%;
+	}
+}

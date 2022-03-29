@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { RiDiscordFill } from 'react-icons/ri';
 import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
 import Modal from './modal';
+import './navbar.css';
 export default function Navbar() {
 	const [hover, setHover] = useState(false);
 	const [click, setClick] = useState(false);
@@ -55,6 +56,7 @@ export default function Navbar() {
 							}}
 						></b>
 						<span
+							className="md:block hidden"
 							style={{
 								color: 'white',
 								transform: 'rotate(90deg)',
@@ -80,7 +82,7 @@ export default function Navbar() {
 					/>
 				</div>
 				<div className="items-end">
-					<ul className="items-end float-right pr-16">
+					<ul className="items-end float-right md:pr-16 pr-0">
 						<li
 							style={{
 								display: 'inline-block',
@@ -88,10 +90,7 @@ export default function Navbar() {
 							}}
 						>
 							<a href="/">
-								<RiDiscordFill
-									size={36}
-									className="text-white hover:text-gray-500 ease-in-out duration-200"
-								/>
+								<RiDiscordFill className="text-white hover:text-gray-500 ease-in-out duration-200 md:text-4xl text-2xl" />
 							</a>
 						</li>
 
@@ -102,10 +101,7 @@ export default function Navbar() {
 							}}
 						>
 							<a href="/">
-								<AiOutlineInstagram
-									className="text-white hover:text-gray-500 ease-in-out duration-200"
-									size={36}
-								/>
+								<AiOutlineInstagram className="text-white hover:text-gray-500 ease-in-out duration-200 icons md:text-4xl text-2xl" />
 							</a>
 						</li>
 						<li
@@ -115,10 +111,7 @@ export default function Navbar() {
 							}}
 						>
 							<a href="/">
-								<AiOutlineTwitter
-									className="text-white hover:text-gray-500 ease-in-out duration-200"
-									size={36}
-								/>
+								<AiOutlineTwitter className="text-white hover:text-gray-500 ease-in-out duration-200 md:text-4xl text-2xl" />
 							</a>
 						</li>
 					</ul>

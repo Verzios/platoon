@@ -30,3 +30,12 @@
 	background-size: contain;
 	background: url('https://bapes.io/assets/img/unique-bionic-apes-bg.svg');
 }
+.title {
+	font-size: 64px;
+	font-weight: 700;
+}
+@media screen and (max-width: 800px) {
+	.title {
+		font-size: 38px;
+	}
+}

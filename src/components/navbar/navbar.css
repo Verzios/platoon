@@ -1,0 +1,8 @@
+.SearchIcon {
+	font-size: 128px;
+}
+@media only screen and (max-width: 400px) {
+	.icons {
+		font-size: 20px;
+	}
+}

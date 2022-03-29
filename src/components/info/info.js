@@ -11,7 +11,7 @@ export default function Info() {
 	}, []);
 	return (
 		<div
-			className="text-center  justify-center h-[1000px]"
+			className="text-center  justify-center md:h-[1200px] h-[1300px]"
 			data-aos="fade-up"
 			style={{
 				color: 'white',
@@ -20,7 +20,7 @@ export default function Info() {
 				lineHeight: 1.2,
 			}}
 		>
-			<span
+			{/* <span
 				style={{
 					background: 'url(../../assets/banana-left.png)',
 					width: '502px',
@@ -32,8 +32,8 @@ export default function Info() {
 				}}
 				className="banana-left-animation"
 				data-aos="rotateElement"
-			></span>
-			<span
+			></span> */}
+			{/* <span
 				style={{
 					background:
 						'url(../../assets/banana-right.png) 0 0 no-repeat',
@@ -45,14 +45,12 @@ export default function Info() {
 					position: 'absolute',
 				}}
 				data-aos="rotateOppositeElement"
-			></span>
+			></span> */}
 			<div data-aos="fade-up">
 				<h3 className="pt-64">Today is:</h3>
-				<h2 style={{ fontSize: 72, fontWeight: 900 }}>
-					March 25, 5555
-				</h2>
+				<h2 className="dateInfo">March 25, 5555</h2>
 				<p
-					className="mx-auto mt-4"
+					className="md:mx-auto mx-4 mt-4 paragraphInfo"
 					style={{ color: '#787878', maxWidth: 1000 }}
 				>
 					The Robopacolypse has wiped out all the bionic apes in the

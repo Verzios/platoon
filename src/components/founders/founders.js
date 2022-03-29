@@ -46,14 +46,14 @@ export default function Founders() {
 	const NextArrow = ({ onClick }) => {
 		return (
 			<button
-				className="w-24 h-24 mx-auto absolute right-0 top-52"
+				className="w-24 h-24 mx-auto absolute right-0 top-52 nextArrow"
 				style={{
 					background:
 						'url(../assets/icons8-left-arrow-64.png) center center no-repeat',
 					border: '1px solid #787878',
 					borderRadius: '50%',
 					transform: 'rotate(180deg)',
-					right: '-20%',
+
 					top: '50%',
 				}}
 				onClick={onClick}
@@ -63,13 +63,12 @@ export default function Founders() {
 	const PrevArrow = ({ onClick }) => {
 		return (
 			<button
-				className="w-24 h-24 mx-auto absolute left-0 top-52"
+				className="w-24 h-24  absolute prevButton"
 				style={{
 					background:
 						'url(../assets/icons8-left-arrow-64.png) center center no-repeat',
 					border: '1px solid #787878',
 					borderRadius: '50%',
-					left: '-20%',
 					top: '50%',
 				}}
 				onClick={onClick}
@@ -83,6 +82,17 @@ export default function Founders() {
 		centerMode: true,
 		centerPadding: 0,
 		slidesToShow: 3,
+		nextArrow: <NextArrow />,
+		prevArrow: <PrevArrow />,
+		beforeChange: (current, next) => setActiveIndex(next),
+	};
+	const settings2 = {
+		infinite: true,
+		lazyLoad: true,
+		speed: 300,
+		centerMode: true,
+		centerPadding: 0,
+		slidesToShow: 1,
 		nextArrow: <NextArrow />,
 		prevArrow: <PrevArrow />,
 		beforeChange: (current, next) => setActiveIndex(next),
@@ -116,7 +126,7 @@ export default function Founders() {
 		}
 	};
 	return (
-		<div className="mt-16 testDiv h-screen">
+		<div className="mt-16 testDiv md:h-screen h-[1200px]">
 			<div data-aos="fade-up" className=" containerDiv ">
 				<h2
 					className="text-center text-white z-10 mb-16"
@@ -141,8 +151,8 @@ export default function Founders() {
 				></button> */}
 
 				<div
-					style={{ display: 'flex', maxWidth: 1120 }}
-					className="w-full mx-auto"
+					style={{ maxWidth: 1120 }}
+					className="w-full mx-auto xl:flex hidden"
 				>
 					<Slider
 						{...settings}
@@ -183,7 +193,49 @@ export default function Founders() {
 						})}
 					</Slider>
 				</div>
-
+				<div
+					style={{ maxWidth: 320 }}
+					className="w-full mx-auto xl:hidden flex mb-32"
+				>
+					<Slider
+						{...settings2}
+						style={{
+							width: '100%',
+							height: 300,
+							marginTop: 128,
+						}}
+						className="mx-auto"
+					>
+						{founders.map((founder, idx) => {
+							return (
+								<div
+									className={
+										idx === activeIndex
+											? 'slide activeSlide'
+											: 'slide'
+									}
+								>
+									{idx === activeIndex ? (
+										<FounderCard
+											name={founder.name}
+											title={founder.title}
+											image={founder.image}
+											description={founder.description}
+											active={true}
+										/>
+									) : (
+										<FounderCard
+											name={founder.name}
+											title={founder.title}
+											image={founder.image}
+											description={founder.description}
+										/>
+									)}
+								</div>
+							);
+						})}
+					</Slider>
+				</div>
 				{/* <button
 					className="w-24 h-24 mx-auto "
 					style={{

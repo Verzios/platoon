@@ -43,10 +43,9 @@ export default function Carousel() {
 		<div className="h-[1000px]">
 			<div className="w-4/5  mx-auto  h-48 border-gray-600" id="carousel">
 				<div className="grid grid-cols-2 test">
-					<div>
+					<div className="xl:col-span-1 col-span-2">
 						<h1
-							className="text-white"
-							style={{ fontSize: 64, fontWeight: 700 }}
+							className="text-white title"
 							data-aos="fade-right"
 							data-aos-anchor-placement="bottom-bottom"
 						>
@@ -102,9 +101,9 @@ export default function Carousel() {
 				}}
 				onDrag={handleDrag}
 			>
-				<div className="mt-32 w-full h-[400px] items-center justify-end absolute right-0">
+				<div className="mt-32 w-full h-[400px]  items-center justify-end absolute right-0">
 					<div
-						className="w-[600vw]"
+						className="md:w-[600vw] w-[1000vw]"
 						style={{
 							transition: 'all 0.8s ease-in-out',
 							transform: `translateX(${position.x}px)`,

@@ -22,9 +22,9 @@ export default function JoinVibe() {
 		});
 	}, []);
 	return (
-		<div className="h-[750px]">
-			<div className="grid grid-cols-2 px-32">
-				<div>
+		<div className="xl:h-[850px] h-[1500px]">
+			<div className="grid grid-cols-2 md:px-32">
+				<div className="col-span-2 lg:col-span-1 2xl:mx-0 mx-auto">
 					<div
 						style={{
 							height: 615,
@@ -49,13 +49,7 @@ export default function JoinVibe() {
 							}}
 							data-aos="rotateCircle"
 						></span>
-						<div
-							style={{
-								position: 'relative',
-								top: -40,
-								left: '40.34%',
-							}}
-						>
+						<div className="paragraphTextVibe">
 							<h2
 								style={{
 									margin: '0 0 25px 0',
@@ -115,12 +109,12 @@ export default function JoinVibe() {
 					</div>
 				</div>
 				<div
-					className="items-center justify-center text-center"
+					className="items-center justify-center text-center col-span-2 xl:col-span-1 mt-8 lg:mt-0"
 					data-aos="fade-down-left"
 				>
 					<div
+						className="paragraphVibe xl:h-[400px] lg:h-[500px] h-[600px]"
 						style={{
-							width: '54.54%',
 							color: 'white',
 							margin: '0 auto',
 						}}
@@ -152,9 +146,9 @@ export default function JoinVibe() {
 				}}
 				onDrag={handleDrag}
 			>
-				<div className="-mt-16 w-4/5 h-[200px] items-center justify-end absolute right-0">
+				<div className="-mt-12 w-4/5 h-[200px] items-center justify-end absolute right-0">
 					<div
-						className="w-[600vw]"
+						className="md:w-[600vw] w-[1000vw]"
 						style={{
 							transition: 'all 0.8s ease-in-out',
 							transform: `translateX(${position.x}px)`,

@@ -56,7 +56,7 @@ export default function RoadMap() {
 	];
 	return (
 		<div
-			className="h-full"
+			className="h-full pb-16"
 			style={{
 				background:
 					'url(https://bapes.io/assets/img/roadmap-bg.svg) bottom center repeat-x',

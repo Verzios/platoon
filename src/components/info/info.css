@@ -27,3 +27,29 @@
 	transform: rotate(0deg);
 	opacity: 1;
 }
+.dateInfo {
+	font-size: 72px;
+	font-weight: 900;
+}
+.paragraphInfo {
+	font-size: 32px;
+}
+@media only screen and (max-width: 600px) {
+	.dateInfo {
+		font-size: 48px;
+	}
+	.paragraphInfo {
+		font-size: 22px;
+	}
+	.bgAfter::after {
+		content: '5555';
+		position: absolute;
+		right: 140px;
+		height: 300px;
+		width: 300px;
+		line-height: 500px;
+		font-size: 300px;
+		color: rgba(255, 255, 255, 0.07);
+		margin-top: 0px;
+	}
+}

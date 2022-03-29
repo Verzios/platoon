@@ -20,7 +20,7 @@ export default function Footer() {
 				style={{ color: 'white', justifyContent: 'space-between' }}
 			>
 				<div
-					className="col-span-6 flex flex-row justify-between text-xl "
+					className="lg:col-span-6 col-span-12 flex lg:flex-row flex-col justify-between text-center text-xl "
 					style={{ fontFamily: 'Inconsolata', fontWeight: 600 }}
 				>
 					<h3>platoon_lab@gmail.com</h3>
@@ -29,7 +29,7 @@ export default function Footer() {
 					<h3>Contact Us</h3>
 				</div>
 				<h3
-					className="col-span-6 items-end justify-end"
+					className="lg:col-span-6 col-span-12 items-end justify-end"
 					style={{
 						textAlign: 'end',
 						fontFamily: 'Inconsolata',
